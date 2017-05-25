@@ -1,0 +1,61 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    While manually checking the differences between files is an option ,it makes file comparison and identifying bugs difficult when we have to deal with large files.Using the command
+    diff(on Mac/Linux)and FC(on Windows) allows me to compare 2 versions of a file and view what lines were added and removed from the old version thus helping me find the bug that was
+    introduced for eg. the typo in the game_new.js file
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    It allows me to go back and view earlier versions of a file ; this helps in finding and fixing bugs in an efficient manner.Also using a version control system (such as git) helps me view
+    the evolution of a file (through the commit history) and understand the context of the commits made. It promotes experimenting with code as we build on an already existing working version
+    of code ;and if the code is broken we can revert to a previously existing working version instead of having to rewrite everything from scratch
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    Pros
+
+    * Manual commits allows you to commit your code as a single logical unit which maps to a particular change/update/bug-fix in your code base
+
+    * The manual commit must have a one-line description ,thus making it easy for me to understand the commit that was made while revisiting the code
+
+    * I can revert to an earlier checkpoint where a working version of the code will always be available even if I break the code; whereas if the code
+      were to be automatically saved - it would save any random change made to the code making it difficult to understand the context of the commit
+      while referencing the commit history
+
+    Cons
+
+    * User must be diligent and commit the code whenever a relevant change/update/bug-fix is made or else the updates will be lost
+
+    * User may commit too often or too less.If the diff between the two commits get are big, it gets harder to understand and less useful.However if the
+      commits are too small then the history will be convoluted containing a huge number of commits over a short period
+
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    A commit is snapshot of all the files in your git repository.Multiple file tracking is more common with code since code files are normally interconnected (and interdependent) .Version control systems
+    like Google Docs , Dropbox etc. however have less use for the same since the they are primarily used for storing independent files.For this reason vcs's such as git allow the user to save multiple files
+    in a single commit ; permitting the user to track changes in the files committed together for eg. tracking changes in game.js and index.html from the git repository - asteroids together
+
+How can you use the commands git log and git diff to view the history of files?
+
+    Differences between git log and diff are :
+
+    * git log gives an overview of the history of revisions to the code ; and a commit messages is included to show the diff between each revision and its parent.
+
+    * git diff is used for displaying the difference between any two revisions in your repository.It can also be used to display diffs between the current working
+      copy and the staging area, and diffs between the staging area and a revision in your repository, usually HEAD, while git log will only ever show committed code.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    Using version control will make me more confident to make changes that could possibly break my code because I can easily restore an earlier working version of the code that
+    I have created
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    I will use Git as a version control system along with Github for collaboration for the Data Science project(on a Kaggle dataset) that I have embarked on

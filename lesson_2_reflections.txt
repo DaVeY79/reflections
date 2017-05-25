@@ -1,0 +1,52 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+  A git repository stores metadata about the history of the repository since it was created in a hidden directory called .git .I can create a git repository in an empty directory and create files later or I can create it in a directory that already contains files.A git repository
+  can be initialized in either of the above instances using the command git init.A newly initialized git repository contains no commits.The git command to initialize a repository is git init. Initializing a git repository enables me to track all the files together
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+  The staging area is a preparation area for files from the working directory to be committed to the repository .The working directory consists of your actual files and your repository contains the head of the last commit you made with each commit pointing to is parent.
+  Interdependent and interconnected files which are affected by a particular logical change/update/bug-fix and must be tracked together must be added to the staging area before being committed with a message .It lets me add only the changes from the files(in the working directory)
+  which I want to keep .It then permits me to choose from my staging area all the changes (changes/updates/bug-fixes ) I wish to commit.I can then commit these changes I make to my files altogether in the repository encapsulated as a single commit representing a logical change to
+  my code.This prevents me from committing too often and making my commit history impossible to read.
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+  It lets me add only the changes from the files(in the working directory) which I want to keep.It then lets me commit these changes altogether in the repository as a single commit representing a logical change .As the staging area permits me to choose the changes I wish to commit,
+  I can encapsulate the changes/updates/bug-fixes I make to my files as a single commit representing a logical change to my code.This prevents me from committing too often and ensures I have one commit per logical change ,making my commit history easy to read.
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+  I would use a branch when I want to experiment with my code(for eg. develop a new feature ) and at the same time keep my existing code(in the main branch)intact.Creating a branch would allow me to return to a working version of my code if my code breaks or if the code works ,after
+  testing it ,I could merge the contents of the branch I have worked on with the master(branch).While collaborating a collaborator could 'checkout' my branch and assist in developing it further or continue work on the master or branch out from the master in another direction(i.e explore
+  something else).Git makes code experimentation convenient - while collaboratively working on a project git lets you experiment with your code by branching out and developing something new or different while development on the master branch continues in parallel
+
+
+How do the diagrams help you visualize the branch structure?
+
+  With the help of git log --graph (and/or --oneline) [branchname] we can visualize the branch structure . This will provide a visual representation of the commit history which might be difficult to visualize and conceptualize otherwise as there might be multiple branches running in parallel
+  to the main branch - proceeding to get merged back into the master .We would also get to know the parent of each commit and which branch they are from.By doing so you can see which commits are reachable from each branch.You can also determine whether a there is a change/update/bug-fix is in
+  a different branch and is not included in a particular commit.
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+  Merging 2 branches results in all the commits in the branch you choose to merge with being merged with the branch you are currently on.Diagrams help to visualize how the merged branches have two parents which correspond to the prior heads of each merged branch
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges
+manually?
+
+  Pros
+
+   * Git's automatic merging spares the user of time and effort required in merging the the two branches manually.The way git automatically merges two commits is by checking the contents of the parent of both the branches and the heads of both the branches to be merged and by reconciling
+    the differences between them. This task could otherwise be very tedious as the files being dealt with are large code files possibly containing multiple functions, methods, classes etc.
+
+   * Even though merge conflicts occur Git assists the user in identifying where exactly the conflict occurred.
+
+  Cons
+
+    * Git's automatic merging however is far from perfect as a merge conflict may occur during automatic merging for eg. Git cannot decide whether to include or remove a function which has been included by on one commit and excluded by on the other.Therefore it is important for a user to check
+      whether the code works after the merge .If a merge conflict occurs the conflict must be resolved manually
