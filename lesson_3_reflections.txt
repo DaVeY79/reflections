@@ -1,1 +1,41 @@
-When would you want to use a remote repository rather than keeping all your work local?
+When would you want to use a remote repository rather than keeping all your work
+local?
+
+    When you wish to collaborate you will create a remote repository on GitHub to which you will push the code you will collaboratively work on
+    In this case you will want to use a remote repository rather than keeping all your work local.
+
+Why might you want to always pull changes manually rather than having Git
+automatically stay up-to-date with your remote repository?
+
+    Pulling changes automatically to stay up-to-date with your remote repository would mean that some of the changes which you do not wish to be
+    shared will inevitably be shared.If there is a merge conflict while trying to merge a pull request ,you might want to check whether you can
+    resolve the conflict locally before you push it onto GitHub.In such a situation you would not want to make a bad merge and hence would try to
+    resolve it locally before making it public to other collaborators.Allowing the user to pull changes manually rather than automatically updating
+    your remote would spare the user from making broken code public
+
+Describe the differences between forks, clones, and branches.  When would you
+use one instead of another?
+
+    A clone is when you copy a remote repository onto your local system.You can also copy the remote to your GitHub using a fork.A branch consists of a single commit
+    is created on your local system when you do not want the changes to affect your master.
+
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+
+    A copy of the last known state allows the user to pull from GitHub easily.By having a pointer to the last known state of the remote (origin/master) Git is able to
+    pull the code from GitHub in such a way that the last known state is reachable from the updated master branch (with pointer pointing at both the HEAD of master and
+    origin/master)
+
+
+How would you collaborate without using Git or GitHub?  What would be easier,
+and what would be harder?
+
+    I would use a vcs such as Apache Subversion / Mercurial along with Bitbucket.
+
+When would you want to make changes in a separate branch rather than directly in
+master?  What benefits does each approach have?
+
+    The user may use git fetch to when  the user wishes to pull an update made by another user into a different branch instead of pulling(fast-forward merging) the update
+    with the already existing code in the master branch. This way if there is a bad merge or if the code you just pulled is broken or there is some if issue with the code
+    it can be resolved before merging it with the master branch .Essentially the branch lets you experiment with code while leaving the working version on the master branch
+    intact.
